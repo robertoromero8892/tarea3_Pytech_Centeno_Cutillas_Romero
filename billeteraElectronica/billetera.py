@@ -22,4 +22,18 @@ class BilleteraElectronica(object):
         
 #funcion que devuelve el saldo de la billetera      
     def saldo(self):
-        pass
+        suma_debitos = 0
+        suma_creditos = 0
+        
+        #se suman todos las recargas realizadas
+        for i in range(len(self.debitos)):
+            suma_debitos += self.debitos[i].monto
+            
+        #se suman todos los consumos realizados
+        for j in range(len(self.creditos)):
+            suma_creditos += self.creditos[j].monto
+            
+        #se restan las recargas menos los consumos para obtener el saldo    
+        total = suma_creditos - suma_debitos      
+        
+        return total
