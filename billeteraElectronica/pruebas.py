@@ -26,11 +26,11 @@ class Test (unittest.TestCase):
         billetera = BilleteraElectronica('123ABC', 'Andrea Victoria','Centeno López',20755110)
         
     #enies
-    def testNombreAcento(self):
+    def testNombreEnies(self):
         billetera = BilleteraElectronica('123ABC', 'Jose','Patiño',20755110)
     
     #DIeresis
-    def testNombreAcento(self):
+    def testNombreDieresis(self):
         billetera = BilleteraElectronica('123ABC', 'Jose','Pingüino',20755110)
     
      
