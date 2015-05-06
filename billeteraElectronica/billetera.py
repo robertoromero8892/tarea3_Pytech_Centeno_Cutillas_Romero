@@ -56,8 +56,9 @@ class BilleteraElectronica(object):
             
 #funcion para consumir saldo de la billetera       
     def consumir (self,monto,fecha,iden,pin):  
-        if monto < 0:
-            raise Exception("No se admiten consumos negativas.")
-        else:
-            new_debito = transaccion(monto,fecha,iden)
+        if self.pin == pin:
+            if monto < 0:
+                raise Exception("No se admiten consumos negativas.")
+            else:
+                new_debito = transaccion(monto,fecha,iden)
             self.debitos.append(new_debito)
