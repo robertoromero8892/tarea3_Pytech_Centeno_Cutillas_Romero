@@ -53,3 +53,6 @@ class BilleteraElectronica(object):
         else:
             new_credito = transaccion(monto,fecha,iden)
             self.creditos.append(new_credito)
+            
+#funcion para consumir saldo de la billetera       
+    def consumir (self,monto,fecha,iden,pin):  
