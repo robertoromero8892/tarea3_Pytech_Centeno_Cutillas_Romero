@@ -52,4 +52,9 @@ class Test (unittest.TestCase):
     def testFuncionConsumir(self):
         billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
         billetera.consumir(20,28/04/2015,1293,'123ABC')
+    
+    #debito negativo   
+    def testDebitoNegativo(self):
+        billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
+        self.assertRaises(Exception,billetera.consumir,-2000,28/04/2015,1293,'123ABC')
      
