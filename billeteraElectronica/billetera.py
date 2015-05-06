@@ -37,3 +37,6 @@ class BilleteraElectronica(object):
         total = suma_creditos - suma_debitos      
         
         return total
+    
+#funcion para recargar el saldo de la billetera      
+    def recargar(self,monto,fecha,iden):

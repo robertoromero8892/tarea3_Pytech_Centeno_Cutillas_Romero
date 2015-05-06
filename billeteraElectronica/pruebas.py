@@ -37,5 +37,9 @@ class Test (unittest.TestCase):
     def testFuncionSaldo(self):
         billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
         saldo = billetera.saldo()
-    
+        
+    #FUNCION RECARGAR
+    def testFuncionRecargar(self):
+        billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
+        saldo = billetera.recargar(20,28/04/2015,1293)
      
