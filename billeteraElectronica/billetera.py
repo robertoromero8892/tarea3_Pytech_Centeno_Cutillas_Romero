@@ -61,4 +61,6 @@ class BilleteraElectronica(object):
                 raise Exception("No se admiten consumos negativas.")
             else:
                 new_debito = transaccion(monto,fecha,iden)
+        else:
+            raise Exception("PIN incorrecto.")
             self.debitos.append(new_debito)
