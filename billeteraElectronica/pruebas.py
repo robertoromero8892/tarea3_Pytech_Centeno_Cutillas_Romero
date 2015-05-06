@@ -17,4 +17,10 @@ class Test (unittest.TestCase):
     #Letras en la cedula   
     def testLetrasEnCi(self):
         self.assertRaises(Exception,BilleteraElectronica,'123ABC','Andrea Victoria','Centeno Lopez','111y1111')
+        
+    #Acentos
+    def testNombreAcento(self):
+        billetera = BilleteraElectronica('123ABC', 'Andrea Victoria','Centeno López',20755110)
+        self.fail("No acepta acentos")
+    
      
