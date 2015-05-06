@@ -22,3 +22,4 @@ class BilleteraElectronica(object):
         
 #funcion que devuelve el saldo de la billetera      
     def saldo(self):
+        pass
