@@ -17,3 +17,5 @@ class BilleteraElectronica(object):
         self.debitos = []
         self.creditos = []
         
+        if not isinstance(ci, int):
+            raise Exception("Solo se admiten numero en el campo cedula.")
