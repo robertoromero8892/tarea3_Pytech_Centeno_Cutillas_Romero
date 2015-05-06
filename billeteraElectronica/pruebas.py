@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 '''
 Andrea Centeno
 Andrea Cutillas
@@ -21,6 +24,13 @@ class Test (unittest.TestCase):
     #Acentos
     def testNombreAcento(self):
         billetera = BilleteraElectronica('123ABC', 'Andrea Victoria','Centeno López',20755110)
-        self.fail("No acepta acentos")
+        
+    #enies
+    def testNombreAcento(self):
+        billetera = BilleteraElectronica('123ABC', 'Jose','Patiño',20755110)
+    
+    #DIeresis
+    def testNombreAcento(self):
+        billetera = BilleteraElectronica('123ABC', 'Jose','Pingüino',20755110)
     
      
