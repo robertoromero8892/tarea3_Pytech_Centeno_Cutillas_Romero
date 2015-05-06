@@ -13,3 +13,8 @@ class Test (unittest.TestCase):
     #Instancia de la clase billetera
     def testClaseBilletera(self):
         billetera = BilleteraElectronica('123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
+     
+    #Letras en la cedula   
+    def testLetrasEnCi(self):
+        self.assertRaises(Exception,BilleteraElectronica,'123ABC','Andrea Victoria','Centeno Lopez','111y1111')
+     

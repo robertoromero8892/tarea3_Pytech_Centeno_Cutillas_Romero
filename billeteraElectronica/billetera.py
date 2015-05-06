@@ -10,4 +10,10 @@ Billetera electronica proyecto SAGE'''
 class BilleteraElectronica(object):
     
     def __init__(self, pin, nombres, apellidos, ci):
-        pass
+        self.pin = pin
+        self.nombres = nombres
+        self.apellidos = apellidos
+        self.ci = ci
+        self.debitos = []
+        self.creditos = []
+        
