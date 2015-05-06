@@ -15,22 +15,27 @@ class Test (unittest.TestCase):
 
     #Instancia de la clase billetera
     def testClaseBilletera(self):
-        billetera = BilleteraElectronica('123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
+        billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
      
     #Letras en la cedula   
     def testLetrasEnCi(self):
-        self.assertRaises(Exception,BilleteraElectronica,'123ABC','Andrea Victoria','Centeno Lopez','111y1111')
+        self.assertRaises(Exception,BilleteraElectronica,23,'123ABC','Andrea Victoria','Centeno Lopez','111y1111')
         
     #Acentos
     def testNombreAcento(self):
-        billetera = BilleteraElectronica('123ABC', 'Andrea Victoria','Centeno López',20755110)
+        billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno López',20755110)
         
     #enies
     def testNombreEnies(self):
-        billetera = BilleteraElectronica('123ABC', 'Jose','Patiño',20755110)
-    
+        billetera = BilleteraElectronica(23,'123ABC', 'Jose','Patiño',20755110)
+        
     #DIeresis
     def testNombreDieresis(self):
-        billetera = BilleteraElectronica('123ABC', 'Jose','Pingüino',20755110)
+        billetera = BilleteraElectronica(23,'123ABC', 'Jose','Pingüino',20755110)
+    
+    #FUNCION SALDO
+    def testFuncionSaldo(self):
+        billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
+        saldo = billetera.saldo()
     
      
