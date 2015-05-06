@@ -48,5 +48,8 @@ class BilleteraElectronica(object):
     
 #funcion para recargar el saldo de la billetera      
     def recargar(self,monto,fecha,iden):
-        new_credito = transaccion(monto,fecha,iden)
-        self.creditos.append(new_credito)
+        if monto < 0:
+            raise Exception("No se admiten recargas negativas.")
+        else:
+            new_credito = transaccion(monto,fecha,iden)
+            self.creditos.append(new_credito)

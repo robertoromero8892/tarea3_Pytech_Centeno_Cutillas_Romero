@@ -45,6 +45,6 @@ class Test (unittest.TestCase):
         
     #credito negativo
     def testCreditoNegativo(self):
-        billetera = BilleteraElectronica((23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
+        billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
         self.assertRaises(Exception,billetera.recargar,-2000,28/04/2015,1293)
      
