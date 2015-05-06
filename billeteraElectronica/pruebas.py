@@ -41,5 +41,5 @@ class Test (unittest.TestCase):
     #FUNCION RECARGAR
     def testFuncionRecargar(self):
         billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
-        saldo = billetera.recargar(20,28/04/2015,1293)
+        billetera.recargar(20,28/04/2015,1293)
      

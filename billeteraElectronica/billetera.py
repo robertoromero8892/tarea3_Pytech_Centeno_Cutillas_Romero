@@ -4,7 +4,15 @@ Andrea Cutillas
 Roberto Romero 10-10642
 Equipo: PyTech
 Billetera electronica proyecto SAGE'''
-         
+ 
+#clase transaccion
+class transaccion(object):
+    
+    def __init__(self,monto, fecha, idem):
+        self.monto = monto
+        self.fecha = fecha
+        self.id = idem
+                
 #clase billetera
 class BilleteraElectronica(object):
     
@@ -40,3 +48,5 @@ class BilleteraElectronica(object):
     
 #funcion para recargar el saldo de la billetera      
     def recargar(self,monto,fecha,iden):
+        new_credito = transaccion(monto,fecha,iden)
+        self.creditos.append(new_credito)
