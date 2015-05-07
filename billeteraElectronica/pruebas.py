@@ -69,12 +69,7 @@ class Test (unittest.TestCase):
         billetera = BilleteraElectronica(23,'123ABC','Andrea Victoria','Centeno Lopez',20755110)
         billetera.recargar(2000,28/04/2015,1293)
         self.assertRaises(Exception,billetera.consumir,2001,28/04/2015,1293,'123ABC')
-        
-    """CASOS ESQUINAS"""
-    #Campos vacios
-    def testConsumoMayorASaldo(self):
-        self.assertRaises(Exception,BilleteraElectronica,23,'','','',20755110)
-        
+                
     """CASOS BORDES"""
     #saldo = 0
     def testSaldoCero(self):
@@ -89,6 +84,23 @@ class Test (unittest.TestCase):
             billetera.consumir(2000,28/04/2015,1293,'123ABC')  
         except: 
             self.fail("Resultado inesperado")
+            
+    #Campo de nombre vacio
+    def testNombreVacio(self):
+        self.assertRaises(Exception,BilleteraElectronica,23,'123ABC', '','Centeno Lopez',20755110)
+        
+    #Campo de apellido vacio
+    def testApellidoVacio(self):
+        self.assertRaises(Exception,BilleteraElectronica,23,'123ABC', 'Andrea Victoria','',20755110)
+    
+    #Campo de Pin vacio
+    def testIdenVacio(self):
+        self.assertRaises(Exception,BilleteraElectronica,23,'', 'Andrea Victoria','Centeno Lopez',20755110)
+        
+    """CASOS ESQUINAS"""
+    #Campos vacios
+    def testCamposVacios(self):
+        self.assertRaises(Exception,BilleteraElectronica,23,'','','',20755110)
             
     """MALICIOSOS"""
     #Cedula negativa
