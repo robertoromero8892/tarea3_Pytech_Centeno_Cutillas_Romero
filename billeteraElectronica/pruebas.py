@@ -80,4 +80,13 @@ class Test (unittest.TestCase):
     def testSaldoCero(self):
         billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
         self.assertEqual(billetera.saldo(), 0, 'Saldo = 0')
+        
+    #monto adebitar igual al saldo 
+    def testMontoIgualSaldo(self):
+        billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
+        try:
+            billetera.recargar(2000,28/04/2015,1293)
+            billetera.consumir(2000,28/04/2015,1293,'123ABC')  
+        except: 
+            self.fail("Resultado inesperado")
      
