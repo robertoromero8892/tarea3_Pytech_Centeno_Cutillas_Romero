@@ -37,8 +37,6 @@ class BilleteraElectronica(object):
             raise Exception("campo nombres vacio")
         if self.apellidos == (""):
             raise Exception("campo apellidos vacio")
-        if self.ci == (""):
-            raise Exception("campo cedula vacio")
         
         
 #funcion que devuelve el saldo de la billetera      
@@ -61,7 +59,7 @@ class BilleteraElectronica(object):
     
 #funcion para recargar el saldo de la billetera      
     def recargar(self,monto,fecha,iden):
-        if monto < 0:
+        if monto <= 0:
             raise Exception("No se admiten recargas negativas.")
         else:
             new_credito = transaccion(monto,fecha,iden)
@@ -71,7 +69,7 @@ class BilleteraElectronica(object):
     def consumir (self,monto,fecha,iden,pin):
         if self.pin == pin:
             saldo = self.saldo()
-            if monto < 0:
+            if monto <= 0:
                 raise Exception("No se admiten consumos negativas.")
             if monto > saldo:
                 raise Exception("No hay saldo suficiente para ejecutar la transaccion.")

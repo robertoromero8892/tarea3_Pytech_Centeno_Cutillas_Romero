@@ -75,7 +75,15 @@ class Test (unittest.TestCase):
     def testSaldoCero(self):
         billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
         self.assertEqual(billetera.saldo(), 0, 'Saldo = 0')
-        
+    
+    #monto = 1
+    def testMontoIgualUno(self):
+        billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
+        try:
+            billetera.recargar(1,28/04/2015,1293)
+        except: 
+            self.fail("Resultado inesperado")
+            
     #monto a debitar igual al saldo 
     def testMontoIgualSaldo(self):
         billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
@@ -84,6 +92,11 @@ class Test (unittest.TestCase):
             billetera.consumir(2000,28/04/2015,1293,'123ABC')  
         except: 
             self.fail("Resultado inesperado")
+    
+    #monto = 0 
+    def testMontoIgualUno(self):
+        billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
+        self.assertRaises(Exception,billetera.recargar,0,28/04/2015,1293)
             
     #Campo de nombre vacio
     def testNombreVacio(self):
@@ -101,7 +114,7 @@ class Test (unittest.TestCase):
     #Campos vacios
     def testCamposVacios(self):
         self.assertRaises(Exception,BilleteraElectronica,23,'','','',20755110)
-            
+    
     """MALICIOSOS"""
     #Cedula negativa
     def testCiNegativa(self):
