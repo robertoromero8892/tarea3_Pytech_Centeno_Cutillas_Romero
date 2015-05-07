@@ -13,6 +13,7 @@ from billetera import *
 
 class Test (unittest.TestCase):
 
+    """TDD"""
     #Instancia de la clase billetera
     def testClaseBilletera(self):
         billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
@@ -69,8 +70,14 @@ class Test (unittest.TestCase):
         billetera.recargar(2000,28/04/2015,1293)
         self.assertRaises(Exception,billetera.consumir,2001,28/04/2015,1293,'123ABC')
         
-    #caso esquina campos vacios
+    """CASOS ESQUINAS"""
+    #Campos vacios
     def testConsumoMayorASaldo(self):
         self.assertRaises(Exception,BilleteraElectronica,23,'','','',20755110)
- 
+        
+    """CASOS BORDES"""
+    #saldo = 0
+    def testSaldoCero(self):
+        billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
+        self.assertEqual(billetera.saldo(), 0, 'Saldo = 0')
      
