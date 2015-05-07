@@ -62,4 +62,10 @@ class Test (unittest.TestCase):
     def testPinIgual(self):
         billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
         self.assertRaises(Exception,billetera.consumir,2000,28/04/2015,1293,'123')
+        
+    #Consumo mayor al saldo que hay
+    def testConsumoMayorASaldo(self):
+        billetera = BilleteraElectronica(23,'123ABC','Andrea Victoria','Centeno Lopez',20755110)
+        billetera.recargar(2000,28/04/2015,1293)
+        self.assertRaises(Exception,billetera.consumir,2001,28/04/2015,1293,'123ABC')
      
