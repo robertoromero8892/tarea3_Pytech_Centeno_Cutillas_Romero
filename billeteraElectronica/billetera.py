@@ -28,6 +28,19 @@ class BilleteraElectronica(object):
         if not isinstance(ci, int):
             raise Exception("Solo se admiten numero en el campo cedula.")
         
+                #campos vacios
+        if self.iden == (""):
+            raise Exception("campo identifiacdor vacio")
+        if self.pin == (""):
+            raise Exception("campo PIN vacio")
+        if self.nombres == (""):
+            raise Exception("campo nombres vacio")
+        if self.apellidos == (""):
+            raise Exception("campo apellidos vacio")
+        if self.ci == (""):
+            raise Exception("campo cedula vacio")
+        
+        
 #funcion que devuelve el saldo de la billetera      
     def saldo(self):
         suma_debitos = 0
