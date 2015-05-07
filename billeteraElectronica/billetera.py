@@ -55,12 +55,15 @@ class BilleteraElectronica(object):
             self.creditos.append(new_credito)
             
 #funcion para consumir saldo de la billetera       
-    def consumir (self,monto,fecha,iden,pin):  
+    def consumir (self,monto,fecha,iden,pin):
         if self.pin == pin:
+            saldo = self.saldo()
             if monto < 0:
                 raise Exception("No se admiten consumos negativas.")
+            if monto > saldo:
+                raise Exception("No hay saldo suficiente para ejecutar la transaccion.")
             else:
                 new_debito = transaccion(monto,fecha,iden)
+                self.debitos.append(new_debito)
         else:
-            raise Exception("PIN incorrecto.")
-            self.debitos.append(new_debito)
+            raise Exception("PIN incorrecto.") 
