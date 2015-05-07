@@ -81,7 +81,7 @@ class Test (unittest.TestCase):
         billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
         self.assertEqual(billetera.saldo(), 0, 'Saldo = 0')
         
-    #monto adebitar igual al saldo 
+    #monto a debitar igual al saldo 
     def testMontoIgualSaldo(self):
         billetera = BilleteraElectronica(23,'123ABC', 'Andrea Victoria','Centeno Lopez',20755110)
         try:
@@ -89,4 +89,9 @@ class Test (unittest.TestCase):
             billetera.consumir(2000,28/04/2015,1293,'123ABC')  
         except: 
             self.fail("Resultado inesperado")
+            
+    """MALICIOSOS"""
+    #Cedula negativa
+    def testCiNegativa(self):
+        self.assertRaises(Exception,BilleteraElectronica,23,'123ABC','Andrea Victoria','Centeno Lopez',-20755110)
      
