@@ -68,4 +68,9 @@ class Test (unittest.TestCase):
         billetera = BilleteraElectronica(23,'123ABC','Andrea Victoria','Centeno Lopez',20755110)
         billetera.recargar(2000,28/04/2015,1293)
         self.assertRaises(Exception,billetera.consumir,2001,28/04/2015,1293,'123ABC')
+        
+    #caso esquina campos vacios
+    def testConsumoMayorASaldo(self):
+        self.assertRaises(Exception,BilleteraElectronica,23,'','','',20755110)
+ 
      
